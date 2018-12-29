@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'mptt',
+    'djeddit',
+    'meta',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'djeddit.context_processors.djeddit_settings',
             ],
         },
     },

@@ -1,6 +1,13 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+<head>{% load staticfiles %}
+{% include 'djeddit/base_stylesheets.html' %}</head>
+<body>
+  {% block title %}{% endblock %}
+  {% block content %}{% endblock %}
+  {% block scripts %}{% endblock %}
+  {% include 'djeddit/base_scripts.html' %}
 
 {% if latest_question_list %}
     <ul>
@@ -11,3 +18,4 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+</body>
