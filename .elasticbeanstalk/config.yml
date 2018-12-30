@@ -1,0 +1,26 @@
+branch-defaults:
+  default:
+    environment: null
+  master:
+    environment: null
+  test:
+    environment: wrost-new
+    group_suffix: null
+environment-defaults:
+  wrost-env:
+    branch: null
+    repository: null
+global:
+  application_name: WROST-new
+  branch: null
+  default_ec2_keyname: orlando
+  default_platform: python-3.6
+  default_region: eu-west-2
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: null
+  sc: git
+  workspace_type: Application
