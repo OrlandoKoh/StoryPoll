@@ -4,7 +4,7 @@ branch-defaults:
   master:
     environment: null
   test:
-    environment: wrost-new
+    environment: null
     group_suffix: null
 environment-defaults:
   wrost-env:

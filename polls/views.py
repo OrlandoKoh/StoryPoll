@@ -4,9 +4,15 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 
+from .forms import QuestionForm
 from .models import Question, Choice
 
 # Create your views here.
+
+
+def post_new(request):
+    form = QuestionForm()
+    return render(request, 'polls/question_edit.html', {'form': form})
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
