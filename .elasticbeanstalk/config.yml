@@ -4,14 +4,14 @@ branch-defaults:
   master:
     environment: null
   test:
-    environment: wrost-env
+    environment: wrosty
     group_suffix: null
 environment-defaults:
   wrost-env:
     branch: null
     repository: null
 global:
-  application_name: WROST-new
+  application_name: WROST
   branch: null
   default_ec2_keyname: orlando
   default_platform: python-3.6

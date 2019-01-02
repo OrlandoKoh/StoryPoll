@@ -26,7 +26,7 @@ SECRET_KEY = '%nxyg)j(6r^56$-97vdw_-qwix@r5%%dcaj9wz%rxcjdsho+#h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['wrost-env.p2ipyxpepf.eu-west-2.elasticbeanstalk.com', 'localhost']
+ALLOWED_HOSTS = ['wrosty.53bymipm2q.eu-west-2.elasticbeanstalk.com', 'localhost']
 
 
 # Application definition
