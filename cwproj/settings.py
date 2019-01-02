@@ -76,28 +76,30 @@ WSGI_APPLICATION = 'cwproj.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-if 'RDS_HOSTNAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
-        }
+#if 'RDS_HOSTNAME' in os.environ:
+#    DATABASES = {
+#        'default': {
+#            'ENGINE': 'django.db.backends.mysql',
+#            'NAME': os.environ['RDS_DB_NAME'],
+#            'USER': os.environ['RDS_USERNAME'],
+#            'PASSWORD': os.environ['RDS_PASSWORD'],
+#            'HOST': os.environ['RDS_HOSTNAME'],
+#            'PORT': os.environ['RDS_PORT'],
+#        }
+#    }
+#else:
+DATABASES = {
+    'default': {
+#            'ENGINE': 'django.db.backends.sqlite3',
+#            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'wrost',
+        'USER': 'wrost',
+        'PASSWORD': 'testapp1111',
+        'HOST': 'localhost',
+        'PORT': '',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'worst',
-            'USER': 'wrost',
-            'PASSWORD': 'testapp1111',
-            'HOST': 'localhost',
-            'PORT': '',
-        }
-    }
+}
 
 
 
@@ -150,9 +152,6 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 AWS_LOCATION = 'static'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
