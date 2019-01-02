@@ -1,4 +1,5 @@
 from django.urls import path
+from django.conf.urls import url
 
 from updown.views import AddRatingFromModel
 from . import views
