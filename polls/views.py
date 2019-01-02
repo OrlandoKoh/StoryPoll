@@ -9,7 +9,6 @@ from .models import Question, Choice
 
 # Create your views here.
 
-
 def post(request):
     if request.method == "POST":
         form = QuestionForm(request.POST)
