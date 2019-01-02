@@ -1,10 +1,6 @@
 {% extends 'polls/base.html' %}
 
 {% block content %}
-    <div class="page-header">
-        <a href="{% url 'polls:new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        <h1><a href="/polls/new">new post?</a></h1>
-    </div>
     <h1>Poll List</h1>
     {% if latest_question_list %}
         <ul>
@@ -15,4 +11,5 @@
     {% else %}
         <p>No polls are available.</p>
     {% endif %}
+    <a href="/polls/new">new post?</a>
 {% endblock %}

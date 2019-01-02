@@ -12,5 +12,8 @@
         <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
     {% endfor %}
     <input type="submit" value="Vote">
+    {% if user.is_authenticated %}
+        <a class="btn btn-default" href="{% url 'polls:post_edit' question.id %}"><span class="glyphicon glyphicon-pencil">Edit</span></a>
+    {% endif %}
     </form>
 {% endblock %}

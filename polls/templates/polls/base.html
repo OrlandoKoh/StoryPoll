@@ -9,12 +9,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!--link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'-->
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}">
 
     <title>WROST!</title>
   </head>
   <body>
       <div class="page-header">
-          <h1><a href="/">WROST</a></h1>
+          <a href="{% url 'polls:post' %}" class="top-menu"><span class="glyphicon glyphicon-plus">New Post</span></a>
+          <h1><a href="/polls/">WROST</a></h1>
       </div>
       <div class="content container">
           <div class="row">
