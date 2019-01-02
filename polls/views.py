@@ -111,9 +111,10 @@ def edit_choice(request, pk):
         if form.is_valid():
             post = form.save(commit=False)
     #        post.author = request.user
-            post.published_date = timezone.now()
+            post.question = question.choice_set.get(pk=request.POST['choice'])
+            post.votes = 0
             post.save()
             return redirect('polls:detail', pk=post.id)
     else:
         form = ChoiceForm(instance=post)
-    return render(request, 'polls/question_edit.html', {'form': form})
+    return render(request, 'polls/choice_edit.html', {'form': form})
