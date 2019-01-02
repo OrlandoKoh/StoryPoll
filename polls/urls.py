@@ -15,5 +15,7 @@ urlpatterns = [
             'model': 'Choice',
             'field_name': 'rating',
     }, name='like'),
+    path('<int:pk>/new/', views.add_choice, name='add_choice'),
     path('<int:pk>/edit/', views.post_edit, name='post_edit'),
+    path('<int:question_id>/choice/<int:choice_id>', views.edit_choice, name='edit_choice'),
 ]

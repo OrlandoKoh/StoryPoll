@@ -8,7 +8,7 @@ class QuestionForm(forms.ModelForm):
         model = Question
         fields = ('question_text',)
 
-class ChoiceForms(forms.ModelForm):
+class ChoiceForm(forms.ModelForm):
 
     class Meta:
         model = Choice

@@ -4,7 +4,7 @@ li a {
 }
 
 body {
-    background: white url("images/retro-furnish.png");
+    background: white url("images/white-wood.jpg");
 }
 
 .page-header {
@@ -21,10 +21,11 @@ body {
 
 .content {
     margin-left: 40px;
+    background: white;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Roboto', cursive;
 }
 
 .date {

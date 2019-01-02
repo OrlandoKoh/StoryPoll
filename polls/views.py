@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 
-from .forms import QuestionForm
+from .forms import QuestionForm, ChoiceForm
 from .models import Question, Choice
 
 # Create your views here.
@@ -24,6 +24,25 @@ def post(request):
 #    path('<int:pk>/', views.DetailView.as_view(), name='detail'),
 
     return render(request, 'polls/question_edit.html', {'form': form})
+
+def add_choice(request, pk):
+    if request.method == "POST":
+        form = ChoiceForm(request.POST)
+        question = get_object_or_404(Question, pk=pk)
+
+        if form.is_valid():
+            post = form.save(commit=False)
+    #        post.author = request.user
+            post.question = form.cleaned_data['question']
+            post.votes = 0
+    #        post.rating = 0
+            post.save()
+            return redirect('polls:detail', pk=post.question.pk)
+    else:
+        form = ChoiceForm()
+#    path('<int:pk>/', views.DetailView.as_view(), name='detail'),
+
+    return render(request, 'polls/choice_edit.html', {'form': form})
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
@@ -83,4 +102,18 @@ def post_edit(request, pk):
             return redirect('polls:detail', pk=post.id)
     else:
         form = QuestionForm(instance=post)
+    return render(request, 'polls/question_edit.html', {'form': form})
+
+def edit_choice(request, pk):
+    post = get_object_or_404(Question, pk=pk)
+    if request.method == "POST":
+        form = ChoiceForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+    #        post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('polls:detail', pk=post.id)
+    else:
+        form = ChoiceForm(instance=post)
     return render(request, 'polls/question_edit.html', {'form': form})
