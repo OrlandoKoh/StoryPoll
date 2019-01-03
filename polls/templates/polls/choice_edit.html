@@ -3,7 +3,7 @@
 {% block content %}
     <h1>{{ question.question_text }}</h1>
 
-    <h2>New choice</h2>
+    <h2 class = "heads">New choice</h2>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
