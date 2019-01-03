@@ -1,14 +1,23 @@
 
 li a {
     color: green;
+    max-width: 800;
+    margin: auto;
+}
+
+.list-group {
+    max-width: 800px;
+    margin:auto;
 }
 
 body {
     background: white url("images/white-wood.jpg");
+    max-width: 960px;
+    margin: auto;
 }
 
 .page-header {
-    background-color: #C25100;
+    background-color: green;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -20,12 +29,25 @@ body {
 }
 
 .content {
-    margin-left: 40px;
+    max-width: 960px;
+    margin: auto;
     background: white;
 }
 
 h1, h2, h3, h4 {
     font-family: 'Roboto', cursive;
+}
+
+.heads {
+    margin-left: 20px;
+}
+
+form {
+    margin-left: 20px;
+}
+
+.btn {
+    margin-left: 20px;
 }
 
 .date {
@@ -43,12 +65,23 @@ h1, h2, h3, h4 {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
+    font-size: 14pt;
     margin-right: 20px;
+}
+
+.div {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
 }
 
 .post {
     margin-bottom: 70px;
+}
+
+.btn {
+    margin-bottom: 25px;
 }
 
 .post h2 a, .post h2 a:visited {
